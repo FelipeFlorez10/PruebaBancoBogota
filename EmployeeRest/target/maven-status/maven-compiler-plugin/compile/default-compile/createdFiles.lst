@@ -1,0 +1,5 @@
+com\bancobogota\employeerest\service\AbstractFacade.class
+com\bancobogota\employeerest\service\ApplicationConfig.class
+com\bancobogota\employeerest\Employee_.class
+com\bancobogota\employeerest\Employee.class
+com\bancobogota\employeerest\service\EmployeeFacadeREST.class

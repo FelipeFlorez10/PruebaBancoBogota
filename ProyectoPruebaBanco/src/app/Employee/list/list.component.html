@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 mt-4">
+        <ul class="list-group">
+          <li
+          *ngFor="let employee of employee" 
+          class="list-group-item list-group-item-action"
+          (click)="openForEdit(employee)"
+          [class.active]="employee == selectedEmployee">
+          <span class="badge badge-primary">{{employee.emp_id}}</span> {{employee.emp_name}} - {{employee.emp_boss_id}}
+          </li>
+        </ul>
+        <div class="card mt-4">
+            <div class="card-body">
+                <div class="card-tittle">
+                  Inserta un nuevo empleado 
+                </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="selectedEmployee.emp_name" placeholder="Insertar nombre" class="form-control">
+                </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedEmployee.emp_function" placeholder="Insertar funcion" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedEmployee.emp_date_admission" placeholder="Insertar fecha" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedEmployee.emp_salary" placeholder="Insertar salario" class="form-control">
+                  </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="selectedEmployee.emp_boss_id" placeholder="Insertar Jefe Id" class="form-control">
+                </div>
+              </div>
+              <button (click)="add()" class="btn btn-primary"> Crear </button>
+            <button (click)="delete(selectedEmployee)"  *ngIf="selectedEmployee.emp_id !== 0" class="btn btn-danger"> Eliminar </button>
+        </div>
+      </div>
+    </div>
+  </div>
